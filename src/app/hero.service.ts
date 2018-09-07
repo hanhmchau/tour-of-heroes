@@ -71,7 +71,7 @@ export class HeroService {
   addHero(hero: Hero): any {
     return this.http.post(this.heroesUrl, hero, httpOptions).pipe(
       tap((h: Hero) => this.log(`added hero id=${h.id}`)),
-      catchError(this.handleError<Hero>('addHero'));
+      catchError(this.handleError<Hero>('addHero'))
     );
   }
 
